@@ -25,7 +25,7 @@ Scratch card widget which temporarily hides content from the user.
 
 ```yaml
 dependencies:
-  scratcher: "^2.4.0"
+  flutter_scratcher: ^2.4.0
 ```
 
 2. Now you can install it by running `flutter pub get` or through code editor.
