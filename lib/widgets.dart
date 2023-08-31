@@ -119,8 +119,7 @@ class ScratcherState extends State<Scratcher> {
   @override
   void initState() {
     if (widget.image == null) {
-      final completer = Completer<ui.Image?>()
-        ..complete();
+      final completer = Completer<ui.Image?>()..complete();
       _imageLoader = completer.future;
     } else {
       _imageLoader = _loadImage(widget.image!);
@@ -139,55 +138,55 @@ class ScratcherState extends State<Scratcher> {
             behavior: HitTestBehavior.opaque,
             onPanStart: canScratch
                 ? (details) {
-              widget.onScratchStart?.call();
-              if (widget.enabled) {
-                _addPoint(details.localPosition);
-              }
-            }
+                    widget.onScratchStart?.call();
+                    if (widget.enabled) {
+                      _addPoint(details.localPosition);
+                    }
+                  }
                 : null,
             onPanUpdate: canScratch
                 ? (details) {
-              widget.onScratchUpdate?.call();
-              if (widget.enabled) {
-                _addPoint(details.localPosition);
-              }
-            }
+                    widget.onScratchUpdate?.call();
+                    if (widget.enabled) {
+                      _addPoint(details.localPosition);
+                    }
+                  }
                 : null,
             onPanEnd: canScratch
                 ? (details) {
-              widget.onScratchEnd?.call();
-              if (widget.enabled) {
-                setState(() => points.add(null));
-              }
-            }
+                    widget.onScratchEnd?.call();
+                    if (widget.enabled) {
+                      setState(() => points.add(null));
+                    }
+                  }
                 : null,
             child: AnimatedSwitcher(
               duration: transitionDuration ?? Duration.zero,
               child: isFinished
                   ? widget.child
                   : CustomPaint(
-                foregroundPainter: ScratchPainter(
-                  image: snapshot.data,
-                  imageFit: widget.image == null
-                      ? null
-                      : widget.image!.fit ?? BoxFit.cover,
-                  points: points,
-                  color: widget.color,
-                  onDraw: (size) {
-                    if (_lastKnownSize == null) {
-                      _setCheckpoints(size);
-                    } else if (_lastKnownSize != size &&
-                        widget.rebuildOnResize) {
-                      WidgetsBinding.instance.addPostFrameCallback((_) {
-                        reset();
-                      });
-                    }
+                      foregroundPainter: ScratchPainter(
+                        image: snapshot.data,
+                        imageFit: widget.image == null
+                            ? null
+                            : widget.image!.fit ?? BoxFit.cover,
+                        points: points,
+                        color: widget.color,
+                        onDraw: (size) {
+                          if (_lastKnownSize == null) {
+                            _setCheckpoints(size);
+                          } else if (_lastKnownSize != size &&
+                              widget.rebuildOnResize) {
+                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                              reset();
+                            });
+                          }
 
-                    _lastKnownSize = size;
-                  },
-                ),
-                child: widget.child,
-              ),
+                          _lastKnownSize = size;
+                        },
+                      ),
+                      child: widget.child,
+                    ),
             ),
           );
         }
@@ -202,7 +201,8 @@ class ScratcherState extends State<Scratcher> {
     final imageProvider = image.image as dynamic;
     final key = await imageProvider.obtainKey(const ImageConfiguration());
 
-    imageProvider.load(key, (Uint8List bytes, {
+    imageProvider.load(key, (
+      Uint8List bytes, {
       int? cacheWidth,
       int? cacheHeight,
       bool? allowUpscaling,
@@ -251,7 +251,7 @@ class ScratcherState extends State<Scratcher> {
 
       final radius = widget.brushSize / 2;
       checkpoints.removeWhere(
-            (checkpoint) => _inCircle(checkpoint, point!, radius),
+        (checkpoint) => _inCircle(checkpoint, point!, radius),
       );
 
       progress =
