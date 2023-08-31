@@ -5,7 +5,7 @@ displayed.
 
 Scratch card widget which temporarily hides content from the user.
 
-[![Version](https://img.shields.io/badge/pub-v2.4.0-blue.svg)](https://pub.dartlang.org/packages/scratcher)
+[![Version](https://img.shields.io/badge/pub-v2.4.2-blue.svg)](https://pub.dartlang.org/packages/scratcher)
 
 ![Demo](https://media.giphy.com/media/fXztsRTXoKsVuChtTl/giphy.gif)
 
