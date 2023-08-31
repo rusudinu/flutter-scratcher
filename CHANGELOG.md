@@ -1,3 +1,7 @@
+## 2.4.3
+
+* Readme fixes.
+
 ## 2.4.2
 
 * Code formatting and better package description.

@@ -2,7 +2,7 @@ name: flutter_scratcher
 description: A remake of the original scratcher package. Scratch card widget which temporarily hides content from the user.
 homepage: https://github.com/xrusu/flutter-scratcher
 
-version: 2.4.2
+version: 2.4.3
 
 environment:
   sdk: ">=2.17.0 <4.0.0"
