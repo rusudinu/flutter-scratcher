@@ -1,11 +1,13 @@
 # scratcher
 
+## Discontinued due to fix on original package
+
 This is a remake of [this package](https://github.com/vintage). I did this because the original package was not being maintained and had a deal-breaking bug: on ios the scratches would not be
 displayed.
 
 Scratch card widget which temporarily hides content from the user.
 
-[![Version](https://img.shields.io/badge/pub-v2.4.2-blue.svg)](https://pub.dartlang.org/packages/scratcher)
+[![Version](https://img.shields.io/badge/pub-v2.5.0-blue.svg)](https://pub.dartlang.org/packages/scratcher)
 
 ![Demo](https://media.giphy.com/media/fXztsRTXoKsVuChtTl/giphy.gif)
 
