@@ -1,3 +1,7 @@
+## 2.5.0
+
+* Discontinued due to fix on original package
+
 ## 2.4.3
 
 * Readme fixes.
